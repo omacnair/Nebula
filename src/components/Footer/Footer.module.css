@@ -1,0 +1,97 @@
+.footer {
+  --footer-color: rgba(107, 230, 255, 0.6);
+  width: 100%;
+  padding: 30px 0;
+  background: rgba(10, 4, 18, 0.8);
+  border-top: 1px solid var(--neon-purple);
+  color: var(--footer-color);
+  font-family: 'Orbitron', sans-serif;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.topLine {
+  height: 1px;
+  width: 50px;
+  background: var(--footer-color);
+  margin-bottom: 15px;
+}
+
+.leftSection {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.year {
+  font-size: 1.2rem;
+  font-weight: 300;
+  color: rgba(107, 230, 255, 0.4);
+  margin: 0;
+}
+
+.madeBy {
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.coords {
+  font-size: 0.8rem;
+  margin: 10px 0 0 0;
+  opacity: 0.7;
+}
+
+.rightSection {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.contactsTitle {
+  font-size: 0.9rem;
+  margin: 0 0 5px 0;
+  font-weight: 400;
+}
+
+.contactItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.contactItem a {
+  color: var(--footer-color);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: opacity 0.3s;
+}
+
+.contactItem a:hover {
+  opacity: 0.8;
+}
+
+.telegramIcon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.7;
+}
+
+/* Адаптация для мобильных */
+@media (max-width: 768px) {
+  .footerContent {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .rightSection {
+    align-items: flex-start;
+    margin-top: 15px;
+  }
+}

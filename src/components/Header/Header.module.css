@@ -1,0 +1,345 @@
+ /** {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2. Основные переменные стилей */
+/*:root {
+  --neon-blue: #6be6ff;
+  --neon-purple: #a78aff;
+  --space-dark: #0a0412;
+}
+
+/* 3. Стили шапки */
+/*.header {
+  --header-height: 70px;  /* Переменная для высоты */
+
+  /*display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  background: rgba(10, 4, 18, 0);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--neon-purple);
+  position: fixed;
+  width: 100vw;  /* 100% ширины viewport */
+  /*left: 0;
+  top: 0;
+  z-index: 1000;
+  height: var(--header-height);
+}
+
+/* 4. Стили логотипа */
+/*.logoContainer {
+  height: calc(var(--header-height) - 15px);
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+/* 5. Эффекты при наведении на лого */
+/*.logoContainer:hover {
+  filter: drop-shadow(0 0 8px rgba(164, 107, 255, 0.7));
+}
+
+.logoContainer:hover .logo {
+  transform: scale(1.03);
+}
+
+/* 6. Стили названия бренда */
+/*.brandName {
+  color: var(--neon-purple);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-left: 1rem;
+  text-shadow: 0 0 5px rgba(107, 230, 255, 0.3);
+  white-space: nowrap;  /* Запрет переноса текста */
+/*}
+
+/* 7. Навигационное меню */
+/*.nav {
+  display: flex;
+  gap: 1.5rem;
+  margin-left: auto;
+  margin-right: 1rem;  /* Отступ от края */
+/*}
+
+.navButton {
+  background: none;
+  border: none;
+  color: var(--neon-blue);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+  padding: 0 0.5rem;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+/* 8. Эффекты кнопок навигации */
+ /* navButton:hover {
+  opacity: 1;
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+/* 9. Мобильное меню */
+/*.menuToggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--neon-blue);
+  font-size: 1.5rem;
+  cursor: pointer;
+  margin-left: auto;
+  padding: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+/* 10. Выпадающее меню */
+/*.dropdownMenu {
+  position: absolute;
+  top: var(--header-height);
+  right: 1rem;
+  background: rgba(10, 4, 18, 0.98);
+  border: 1px solid var(--neon-purple);
+  border-top: none;
+  border-radius: 0 0 8px 8px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1001;
+  min-width: 180px;
+}
+
+/* 11. Адаптация для планшетов */
+/*@media (max-width: 768px) {
+  .header {
+    padding: 0 1rem;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .menuToggle {
+    display: block;
+  }
+
+  .brandName {
+    font-size: 1rem;
+    margin-left: 0.8rem;
+  }
+}
+@media (min-width: 769px) {
+  .menuToggle,
+  .dropdownMenu {
+    display: none;
+  }
+}
+
+/* 12. Адаптация для мобильных */
+/*@media (max-width: 480px) {
+  .brandName {
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+  }
+  
+  .header {
+    padding: 0 0.8rem;
+  }
+  
+  .dropdownMenu {
+    min-width: 150px;
+    right: 0.5rem;
+  }
+}
+
+.active {
+  color: var(--neon-purple) !important;
+  text-shadow: 0 0 8px var(--neon-purple) !important;
+  font-weight: bold;
+}*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Базовые стили */
+:root {
+  --neon-blue: #6be6ff;
+  --neon-purple: #a78aff;
+  --space-dark: #0a0412;
+  --header-height: 70px;
+  
+}
+
+/* Основной контейнер шапки */
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: var(--header-height);
+  background: rgba(10, 4, 18, 0.8);
+  backdrop-filter: blur(5px);
+  border-bottom: 1px solid var(--neon-purple);
+  z-index: 1000;
+}
+
+/* Контейнер для содержимого шапки */
+.headerContent {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+   overflow: hidden;
+  margin: 0;
+  padding: 0 20px;
+}
+
+/* Блок с лого и названием (левый край) */
+.brand {
+  display: flex;
+  align-items: center;
+   white-space: nowrap; 
+  gap: 15px;
+}
+.logoHoverWrapper {
+  display: inline-block;
+  transition: filter 0.3s ease;
+}
+
+.logoHoverWrapper:hover {
+  filter: drop-shadow(0 0 8px var(--neon-purple));
+}
+.logoLink {
+  display: flex;
+  height: calc(var(--header-height) - 15px);
+}
+
+.logo {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+.brandName {
+  color: var(--neon-purple);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 0 5px rgba(107, 230, 255, 0.3);
+}
+
+/* Десктопная навигация (правый край) */
+.desktopNav {
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+  gap: 20px;
+}
+
+.navLink {
+  color: var(--neon-blue);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 5px 10px;
+  transition: all 0.3s ease;
+}
+
+.navLink:hover{
+  text-shadow: 0 0 5px var(--neon-blue);
+}
+
+.activeLink { 
+  text-shadow: 0 0 8px var(--neon-purple);
+  font-weight: bold;
+}
+
+/* Кнопка мобильного меню */
+.menuButton {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--neon-blue);
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* Мобильное меню */
+.mobileMenu {
+  display: none;
+  position: absolute;
+  top: var(--header-height);
+  left: 0;
+  width: 100%;
+  background: rgba(10, 4, 18, 0.95);
+  border-bottom: 1px solid var(--neon-purple);
+  padding: 15px 20px;
+  flex-direction: column;
+  gap: 15px;
+  z-index: 999;
+  white-space: nowrap;
+}
+
+.mobileLink {
+  color: var(--neon-blue);
+  font-family: 'Orbitron', sans-serif;
+  font-size: 1rem;
+  text-decoration: none;
+  padding: 8px 0;
+  display: block;
+}
+
+/* Адаптация для планшетов и мобильных */
+@media (max-width: 768px) {
+  .brand {
+    flex: 1; /* Занимает доступное пространство */
+    min-width: 0; /* Позволяет сжиматься */
+  }
+  .desktopNav {
+    display: none;
+  }
+
+  .menuButton {
+    display: block;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+
+  .brandName {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandName {
+    font-size: 0.9rem;
+  }
+  
+  .headerContent {
+    padding: 0 15px;
+  }
+}

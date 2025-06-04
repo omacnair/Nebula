@@ -1,0 +1,80 @@
+.heroSection {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.saturnImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.title {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 5rem;
+  color: #6be6ff;
+  text-shadow: 0 0 10px rgba(107, 230, 255, 0.7);
+  margin: 0;
+  letter-spacing: 0.5rem;
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.slogan {
+  position: absolute;
+  bottom: 15%;
+  right: 10%;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 2rem;
+  color: #a78aff;
+  text-shadow: 0 0 8px rgba(167, 138, 255, 0.5);
+  margin: 0;
+  letter-spacing: 0.3rem;
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #6be6ff; }
+  to { text-shadow: 0 0 20px #6be6ff, 0 0 30px #a78aff; }
+}
+
+/* Адаптация для планшетов (768px) */
+@media (max-width: 768px) {
+  .title {
+    font-size: 3.5rem;
+    left: 5%;
+    top: 15%;
+  }
+  
+  .slogan {
+    font-size: 1.8rem;
+    right: 5%;
+    bottom: 10%;
+  }
+}
+
+/* Адаптация для мобильных (480px) */
+@media (max-width: 480px) {
+  .title {
+    font-size: 2.5rem;
+    letter-spacing: 0.2rem;
+    left: 5%;
+    top: 10%;
+  }
+  
+  .slogan {
+    font-size: 1.2rem;
+    right: 5%;
+    bottom: 8%;
+  }
+}
