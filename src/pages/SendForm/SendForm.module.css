@@ -1,8 +1,8 @@
 /* Основные стили */
 .mainContainer {
-  padding-top: 100px; /* Отступ от хедера */
-  min-height: calc(100vh - 150px); /* Чтобы футер оставался внизу */
-  padding-bottom: 50px; /* Отступ от футера */
+  padding-top: 100px; 
+  min-height: calc(100vh - 150px); 
+  padding-bottom: 50px; 
   background: #0a0412;
 }
 

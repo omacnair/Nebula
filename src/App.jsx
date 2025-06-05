@@ -42,7 +42,6 @@ export default function App() {
             </Routes>
             <Footer/>
           </BrowserRouter>
-        {/* Остальной контент... */}
       </div>
     </>
   )

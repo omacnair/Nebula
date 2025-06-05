@@ -3,7 +3,6 @@ import { useFrame } from '@react-three/fiber'
 import { Stars } from '@react-three/drei'
 
 /**
- * Компонент звёздного фона с параллакс-эффектом при скролле
  * Использует Three.js через React Three Fiber
  */
 export default function StarsParallax() {

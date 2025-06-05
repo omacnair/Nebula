@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './NewsSection.module.css';
 import NewsCard from './NewsCard';
-import newsData from './newsData'; // Импортируем массив с новостями
+import newsData from './newsData'; 
 
 // Основной компонент секции новостей
 const NewsSection = () => {

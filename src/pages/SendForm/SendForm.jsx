@@ -49,7 +49,7 @@ export default function SendForm() {
   };
 
   return (
-    <main className={styles.mainContainer}> {/* Добавлен основной контейнер */}
+    <main className={styles.mainContainer}> 
       <div className={styles.formContainer}>
         <h1 className={styles.title}>Отправить космический сигнал</h1>
         
