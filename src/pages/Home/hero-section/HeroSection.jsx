@@ -1,5 +1,5 @@
 import styles from './HeroSection.module.css'
-import  img  from './saturnMain2.png'
+import  img  from './saturnMain4.png'
 
 export default function HeroSection() {
   return (
