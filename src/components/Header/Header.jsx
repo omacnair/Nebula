@@ -135,8 +135,7 @@ export default function Header() {
   const navItems = [
     { id: 1, label: 'Главная', path: '/' },
     { id: 2, label: 'Планеты', path: '/planets' },
-    { id: 3, label: 'Ar-вид', path: '/ar-view' },
-    { id: 4, label: 'Отправь сигнал', path: '/send-signal' }
+    { id: 3, label: 'Отправь сигнал', path: '/send-signal' }
   ];
 
   // Функция переключения мобильного меню

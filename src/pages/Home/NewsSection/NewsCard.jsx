@@ -1,54 +1,45 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './NewsSection.module.css';
 
-export default function NewsCard({ post }) {
-  const [imageStatus, setImageStatus] = useState('loading'); // loading/loaded/error
-
-  useEffect(() => {
-    if (!post.imageUrl) {
-      setImageStatus('error');
-      return;
-    }
-
-    const img = new Image();
-    img.src = post.imageUrl;
-    
-    img.onload = () => setImageStatus('loaded');
-    img.onerror = () => setImageStatus('error');
-
-    return () => {
-      img.onload = null;
-      img.onerror = null;
-    };
-  }, [post.imageUrl]);
+const NewsCard = ({ newsItem }) => {
+  const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div className={styles.card}>
+    <div 
+      className={styles.card}
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+    >
       <div className={styles.imageContainer}>
-        {imageStatus === 'loaded' ? (
-          <img
-            src={post.imageUrl}
-            alt={post.title}
-            className={styles.image}
-          />
+        {newsItem.image ? (
+          <img src={newsItem.image} alt={newsItem.title} className={styles.image} />
         ) : (
-          <div className={styles.placeholder}>
-            {imageStatus === 'error' ? 'Изображение не загружено' : 'Загрузка...'}
+          <div className={styles.placeholder}>NebulaFlow</div>
+        )}
+      </div>
+      
+      <div className={styles.content}>
+        <h3 className={styles.title}>{newsItem.title}</h3>
+        
+        {/* Всплывающее окно */}
+        {isHovered && (
+          <div className={styles.popup}>
+            <div className={styles.popupContent}>
+              <p>{newsItem.description}</p>
+              <a 
+                href="https://t.me/NebulaFloww" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className={styles.telegramLink}
+              >
+                → Telegram
+              </a>
+            </div>
           </div>
         )}
       </div>
-
-      <div className={styles.content}>
-        <h3 className={styles.title}>{post.title}</h3>
-        <a
-          href={post.telegramLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={styles.link}
-        >
-          Читать в Telegram →
-        </a>
-      </div>
     </div>
   );
-}
+};
+
+export default NewsCard;
