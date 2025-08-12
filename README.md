@@ -23,7 +23,7 @@ Framer Motion для микроанимаций интерфейса
 CSS-анимации (@keyframes) для свечения текста
 Оптимизация
 Lazy Loading для страниц (React.lazy)
-Предзагрузка 3D-моделей при наведении на <Link>
+
 
 Установка git clone https://github.com/omacnair/Nebula.git
 cd nebula-flow
